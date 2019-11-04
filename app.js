@@ -11,10 +11,11 @@ const flash = require('connect-flash');
 const multer = require('multer');
 const cors = require('cors')
 const dotenv = require('dotenv');
+
 dotenv.config();
 const helmet = require('helmet');
 const compression = require('compression');
-const morgan = require('morgan');
+const morgan = require('morgan'); 
 
 
 const errorController = require('./controllers/error');
@@ -25,7 +26,7 @@ const User = require('./models/user');
 const mongoDbUri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-tivr4.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
 const app = express();
 
-
+// testing
 
 const store = new MongoDbStore({
     uri: mongoDbUri,
