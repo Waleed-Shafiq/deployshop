@@ -9,7 +9,7 @@ const {
 
 const transporter = nodeMailer.createTransport(sendGridTransport({
     auth: {
-        api_key: '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'
+        api_key: process.env.SEND_KEY
     }
 }));
 
@@ -87,7 +87,7 @@ exports.postLogin = (req, res, next) => {
         email: req.body.email
     }).then(user => {
         console.log(user);
-        if(!user) {
+        if (!user) {
             return res.status(422).render('auth/login', {
                 pageTitle: 'Login',
                 path: '/login',

@@ -21,7 +21,7 @@
                                 <form action="/create-order" method="POST">
                                         <script
                                           src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                          data-key="pk_live_RV5toqR6glOLYe7YVta5Uxm000cCnhSRMv"
+                                          data-key=`${process.env.STRIPE_CLIENT}`
                                           data-amount="<%= totalSum * 100%>"
                                           data-name="Your order"
                                           data-description="all your items"
